@@ -1,0 +1,15 @@
+[
+	{
+		"nombre": "Proyecto BCDR",
+		"codigo": "001",
+        "fechaInicio":"1/1/2016",
+        "fechaFin":"2/2/2017"
+    },
+    {
+		"nombre": "Proyecto Piloto BCDR",
+		"codigo": "002",
+        "fechaInicio":"1/1/2016",
+        "fechaFin":"2/2/2017"
+    }
+
+]

@@ -1,0 +1,33 @@
+<h1> Lista de Proyectos</h1>
+
+
+<div>
+
+    <a  ui-sref="CreateProyecto" href="#/proyectos/create" class="btn btn-default">Crear Nuevo</a>
+
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <td> Codigo </td>
+                <td> Nombre </td>
+                 <td>Fecha Inicio</td>
+                 <td>Fecha Fin</td>
+                 <td>Acciones</td>
+            </tr>
+        </thead>
+        <tbody>
+             <tr ng-repeat="proyecto in proyectos">
+                <td>{{ proyecto.codigo }}</td>
+                <td>{{ proyecto.nombre }}</td>
+                <td>{{ proyecto.fechaInicio }}</td>
+                <td>{{ proyecto.fechaFin }}</td>
+                <td>
+                    <a class="btn btn-default">Detalles</a>
+                    <a class="btn btn-default">Editar</a>
+                    <a class="btn btn-danger">Borrar</a>
+                 </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
