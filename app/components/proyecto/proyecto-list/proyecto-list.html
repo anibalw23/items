@@ -1,0 +1,43 @@
+
+<div class="container bootstrap snippet">
+  <div class="header">
+    <h3 class="text-muted prj-name">
+        <span class="fa fa-users fa-2x principal-title"></span>
+        Lista de Proyectos
+    </h3>
+  </div>
+
+
+  <div class="jumbotron list-content">
+    <ul class="list-group">
+       <a ui-sref="CreateProyecto" href="#/proyectos/create" class="btn btn-default">Crear Nuevo Proyecto</a>
+      <li href="#" class="list-group-item title">
+        Lista de Proyectos
+      </li>
+
+      <li ng-repeat="proyecto in proyectos" href="#" class="list-group-item text-left">
+          <span style="font-size:25px;" class="img-thumbnail glyphicon glyphicon-book"  > </span>
+           Proyecto <label class="name">{{ proyecto.nombre }}</label>
+
+        <label class="pull-right">
+            <a ui-sref="detailsProyecto({id: proyecto._id})" class="btn btn-success btn-xs glyphicon glyphicon-ok"  title="Ver"></a>
+            <a  class="btn btn-danger  btn-xs glyphicon glyphicon-trash" href="#" title="Borrar"></a>
+            <a  class="btn btn-info  btn-xs glyphicon glyphicon glyphicon-comment" href="#" title="Send message"></a>
+        </label>
+        <div class="break"></div>
+      </li>
+
+      <li href="#" class="list-group-item text-left">
+        <a class="btn btn-block btn-primary">
+            <i class="glyphicon glyphicon-refresh"></i>
+            Cargar Mas...
+        </a>
+      </li>
+    </ul>
+  </div>
+  </div>
+<div>
+
+
+</div>
+

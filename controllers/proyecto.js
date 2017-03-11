@@ -16,6 +16,17 @@ exports.list_all_proyectos = function(req, res) {
     });
 };
 
+exports.find_proyecto = function(req, res) {
+  res.setHeader('Content-Type', 'application/json');
+    Proyecto.findOne({'_id' : req.params.id },function(err, proyectos) {
+        if(err) {
+            res.send(err);
+        }
+        res.send(JSON.stringify(proyectos));
+    });
+};
+
+
 
 exports.create_proyecto = function(req, res) {
     console.log("Req = " + req.body);

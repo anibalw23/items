@@ -15,6 +15,7 @@ app.configure(function() {
     app.use('/assets/img', express.static(__dirname + '/assets/img'));
     app.use('/assets/js', express.static(__dirname + '/assets/js'));
     app.use('/assets/lib', express.static(__dirname + '/assets/lib'));
+    app.use('/bower_components/', express.static(__dirname + '/bower_components/'));
     // Muestra un log de todos los request en la consola
     app.use(express.logger('dev'));
     // Permite cambiar el HTML con el método POST
@@ -27,8 +28,8 @@ app.configure(function() {
 /*Controlador de Proyectos*/
 var proyectoController = require('./controllers/proyecto');
 app.get('/api/proyectos',  proyectoController.list_all_proyectos);
-app.post('/api/proyectos/create',  proyectoController.create_proyecto);
-
+app.post('/api/proyectos',  proyectoController.create_proyecto);
+app.get('/api/proyectos/:id',  proyectoController.find_proyecto);
 
 // Carga una vista HTML simple donde irá nuestra Single App Page
 // Angular Manejará el Frontend

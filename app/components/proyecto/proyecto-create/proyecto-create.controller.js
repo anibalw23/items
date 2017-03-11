@@ -1,12 +1,12 @@
 myApp.controller('proyectoCreate', proyectoCreateController);
 
-function proyectoCreateController($scope, $http, $location, ProyectoService){
+function proyectoCreateController($scope, $http, $location, $state , ProyectoService){
 
     $scope.create = function () {
-        //alert(JSON.stringify($scope.proyecto));
         ProyectoService.create($scope.proyecto).then(function (response) {
             $scope.proyectos = response;
-            $location.path('/proyectos');
+             $state.go('proyectos');
+            //$location.path('proyectos');
         }.bind(this));
     }
 

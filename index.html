@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en" ng-app="myApp" >
 <head>
-  <title>Bootstrap Example</title>
+  <title>Itembank</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -12,16 +12,17 @@
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.2/angular.min.js"></script><!-- load angular -->
   <script src="https://unpkg.com/angular-ui-router@0.4.2/release/angular-ui-router.js"></script><!-- load angular route -->
 
-
   <script src="/app/app.js"></script>
   <script src="/app/components/proyecto/proyecto.service.js"></script>
 
-  <script src="/app/components/proyecto/proyecto-list.component.js"></script>
-  <script src="/app/components/proyecto/proyecto-list.controller.js"></script>
+  <script src="/app/components/proyecto/proyecto-list/proyecto-list.component.js"></script>
+  <script src="/app/components/proyecto/proyecto-list/proyecto-list.controller.js"></script>
 
-  <script src="/app/components/proyecto/proyecto-create.component.js"></script>
-  <script src="/app/components/proyecto/proyecto-create.controller.js"></script>
+  <script src="/app/components/proyecto/proyecto-create/proyecto-create.component.js"></script>
+  <script src="/app/components/proyecto/proyecto-create/proyecto-create.controller.js"></script>
 
+ <script src="/app/components/proyecto/proyecto-details/proyecto-details.component.js"></script>
+ <script src="/app/components/proyecto/proyecto-details/proyecto-details.controller.js"></script>
 
 
 
@@ -60,6 +61,8 @@
   </style>
 </head>
 <body >
+
+<notifications-bar class="notifications"></notifications-bar>
 
 <nav class="navbar navbar-inverse">
   <div class="container-fluid">
