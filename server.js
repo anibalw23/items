@@ -30,6 +30,8 @@ var proyectoController = require('./controllers/proyecto');
 app.get('/api/proyectos',  proyectoController.list_all_proyectos);
 app.post('/api/proyectos',  proyectoController.create_proyecto);
 app.get('/api/proyectos/:id',  proyectoController.find_proyecto);
+app.delete('/api/proyectos/:id',  proyectoController.delete_proyecto);
+app.put('/api/proyectos/',  proyectoController.edit_proyecto);
 
 // Carga una vista HTML simple donde irá nuestra Single App Page
 // Angular Manejará el Frontend

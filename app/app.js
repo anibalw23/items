@@ -24,6 +24,16 @@ myApp.config( function($stateProvider, $urlRouterProvider){
         templateUrl:'/app/components/proyecto/proyecto-create/proyecto-create.html',
         controller:'proyectoCreate'
     })
+    .state('deleteProyecto',{
+        url:'proyectos/delete/:id',
+        templateUrl:'/app/components/proyecto/proyecto-delete/proyecto-delete.html',
+        controller:'proyectoDelete'
+    })
+    .state('editProyecto',{
+        url:'proyectos/edit/:id',
+        templateUrl:'/app/components/proyecto/proyecto-edit/proyecto-edit.html',
+        controller:'proyectoEdit',
+    })
     .state('bancopreguntas', {
         url:'bancopreguntas',
         templateUrl:'/views/partials/bancopreguntas.html'

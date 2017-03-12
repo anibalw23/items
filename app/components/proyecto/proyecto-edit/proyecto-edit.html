@@ -1,0 +1,28 @@
+<h1>Editar Proyecto {{title}}</h1>
+
+
+<div class="">
+
+    <form ng-submit="edit()">
+        <input type="hidden" name="_id" ng-model="proyecto._id">
+        <div class="form-group">
+            <label for="Codigo">Codigo:</label>
+            <input type="text" name="codigo" class="form-control" id="codigo" ng-model="proyecto.codigo">
+        </div>
+        <div class="form-group">
+            <label for="Nombre">Nombre:</label>
+            <input type="text" name="nombre" class="form-control" id="nombre" ng-model="proyecto.nombre" >
+        </div>
+       <!-- <div class="form-group">
+            <label for="FechaInicio">Fecha de Inicio:</label>
+            <input type="date" name="fechaInicio" class="form-control" id="fechaInicio" ng-model="proyecto.fechaInicio" >
+        </div>
+        <div class="form-group">
+            <label for="FechaFin">Fecha de Fin:</label>
+            <input type="date" name="fechaFin" class="form-control" id="fechaFin" ng-model="proyecto.fechaFin" >
+        </div>-->
+
+        <button class="btn btn-success" type="submit"> Guardar</button>
+    </form>
+
+</div>
