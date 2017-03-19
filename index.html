@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" ng-app="myApp" >
+<html lang="en"  >
 <head>
   <title>Itembank</title>
   <meta charset="utf-8">
@@ -9,11 +9,19 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.2/angular.min.js"></script><!-- load angular -->
+  <script type="text/javascript" src="bower_components/angular/angular.min.js"></script><!-- load angular -->
   <script src="https://unpkg.com/angular-ui-router@0.4.2/release/angular-ui-router.js"></script><!-- load angular route -->
+
+  <script type="text/javascript" src="bower_components/tv4/tv4.js"></script>
+  <script type="text/javascript" src="bower_components/objectpath/lib/ObjectPath.js"></script>
+  <script type="text/javascript" src="bower_components/angular-schema-form/dist/schema-form.min.js"></script>
+  <script type="text/javascript" src="bower_components/angular-schema-form/dist/bootstrap-decorator.min.js"></script>
+
+
 
   <script src="/app/app.js"></script>
   <script src="/app/components/proyecto/proyecto.service.js"></script>
+  <script src="/app/components/item/item.service.js"></script>
 
   <script src="/app/components/proyecto/proyecto-list/proyecto-list.component.js"></script>
   <script src="/app/components/proyecto/proyecto-list/proyecto-list.controller.js"></script>
@@ -30,6 +38,13 @@
   <script src="/app/components/proyecto/proyecto-edit/proyecto-edit.component.js"></script>
   <script src="/app/components/proyecto/proyecto-edit/proyecto-edit.controller.js"></script>
 
+  <script src="/app/components/item/item-list/item-list.component.js"></script>
+  <script src="/app/components/item/item-list/item-list.controller.js"></script>
+
+
+  <script src="/app/components/item/item-create/item-create.component.js"></script>
+  <script src="/app/components/item/item-create/item-create.controller.js"></script>
+  <script src="/app/components/item/item-create/item-create-seleccion-multiple.directive.js"></script>
 
 
   <style>
@@ -66,7 +81,7 @@
     }
   </style>
 </head>
-<body >
+<body ng-app="myApp" >
 
 <notifications-bar class="notifications"></notifications-bar>
 
@@ -87,6 +102,7 @@
         <li class="active"><a ui-sref="inicio" href="#/">Inicio</a></li>
         <li><a  ui-sref="proyectos" href="#/proyectos">Proyectos</a></li>
         <li><a ui-sref="bancopreguntas" href="#/bancopreguntas">Banco de Preguntas</a></li>
+        <li><a ui-sref="items" href="#/items">Items</a></li>
         <li><a  href="#/estadisticas">Estadisticas</a></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">

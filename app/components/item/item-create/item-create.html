@@ -1,0 +1,34 @@
+<h1>Crear Nuevo Item</h1>
+
+
+<div class="">
+
+    <form ng-submit="create()">
+        <div class="form-group">
+            <label for="Codigo">Titulo:</label>
+            <input type="text" name="codigo" class="form-control" id="codigo" ng-model="item.titulo">
+        </div>
+        <div class="form-group">
+            <label for="Nombre">Tipo de Pregunta:</label>
+            <p>tipo de pregunta es {{item.tipo_pregunta}}</p>
+                <select name="tipo_pregunta"  ng-model="item.tipo_pregunta" class="form-control" >
+                    <option ng-repeat="tipo_pregunta in tipos_preguntas" value="{{tipo_pregunta.tipo}}">{{tipo_pregunta.tipo}}</option>
+                </select>
+        </div>
+
+
+        <div ng-switch="item.tipo_pregunta">
+            <div ng-switch-when="seleccion_multiple">
+              <seleccion-multiple></seleccion-multiple>
+            </div>
+            <div ng-switch-when="verdadero_falso">
+                <h1>verdadero_falso</h1>
+            </div>
+        </div>
+
+
+
+        <button class="btn btn-success" type="submit"> Guardar</button>
+    </form>
+
+</div>

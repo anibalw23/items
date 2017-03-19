@@ -33,6 +33,17 @@ app.get('/api/proyectos/:id',  proyectoController.find_proyecto);
 app.delete('/api/proyectos/:id',  proyectoController.delete_proyecto);
 app.put('/api/proyectos/',  proyectoController.edit_proyecto);
 
+/*Controlador de Items*/
+var itemController = require('./controllers/item');
+app.get('/api/items',  itemController.list_all_items);
+app.post('/api/items',  itemController.create_item);
+app.get('/api/items/:id',  itemController.find_item);
+app.delete('/api/items/:id',  itemController.delete_item);
+app.put('/api/items/',  itemController.edit_item);
+
+
+
+
 // Carga una vista HTML simple donde irá nuestra Single App Page
 // Angular Manejará el Frontend
 app.get('/', function(req, res) {
