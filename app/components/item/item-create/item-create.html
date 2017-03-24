@@ -1,34 +1,74 @@
-<h1>Crear Nuevo Item</h1>
+<h1></h1>
 
 
 <div class="">
 
     <form ng-submit="create()">
-        <div class="form-group">
-            <label for="Codigo">Titulo:</label>
-            <input type="text" name="codigo" class="form-control" id="codigo" ng-model="item.titulo">
-        </div>
-        <div class="form-group">
-            <label for="Nombre">Tipo de Pregunta:</label>
-            <p>tipo de pregunta es {{item.tipo_pregunta}}</p>
-                <select name="tipo_pregunta"  ng-model="item.tipo_pregunta" class="form-control" >
-                    <option ng-repeat="tipo_pregunta in tipos_preguntas" value="{{tipo_pregunta.tipo}}">{{tipo_pregunta.tipo}}</option>
-                </select>
-        </div>
+        <div class="row">
+            <div class="col-md-6 col-md-push-6">
+                <div class="form-group">
+                    <label for="Codigo">Titulo:</label>
+                    <input type="text" name="codigo" class="form-control" id="codigo" ng-model="item.titulo">
+                </div>
+                <div class="form-group">
+                    <label for="Nombre">Tipo de Pregunta:</label>
+                    <p>tipo de pregunta es {{item.tipo_pregunta}}</p>
+                        <select name="tipo_pregunta"  ng-model="item.tipo_pregunta" class="form-control" >
+                            <option ng-repeat="tipo_pregunta in tipos_preguntas" value="{{tipo_pregunta.tipo}}">{{tipo_pregunta.tipo}}</option>
+                        </select>
+                </div>
 
 
-        <div ng-switch="item.tipo_pregunta">
-            <div ng-switch-when="seleccion_multiple">
-              <seleccion-multiple></seleccion-multiple>
+                <div ng-switch="item.tipo_pregunta">
+                    <div ng-switch-when="seleccion_multiple">
+                      <seleccion-multiple model="item.choices"></seleccion-multiple>
+                    </div>
+                    <div ng-switch-when="verdadero_falso">
+                        <h1>verdadero_falso</h1>
+                    </div>
+                </div>
+
+                <button class="btn btn-success" type="submit"> Guardar</button>
+
             </div>
-            <div ng-switch-when="verdadero_falso">
-                <h1>verdadero_falso</h1>
+
+            <div class="col-md-4 col-md-pull-4">
+                <div class="panel panel-default">
+                    <div class="panel-header">
+                        Clasificacion
+                    </div>
+                    <div class="panel-body">
+                         <div>
+                            <div
+                            angular-multi-select
+                            input-model="input_data"
+                            output-model="output_data"
+
+                            dropdown-label="<[
+                                <# angularMultiSelectConstants.INTERNAL_STATS_TOTAL_LEAFS #> === undefined ? 'No available items' :
+                                    <# angularMultiSelectConstants.INTERNAL_STATS_CHECKED_LEAFS #> === 0 ? 'No checked items' :
+                                        <# angularMultiSelectConstants.INTERNAL_STATS_CHECKED_LEAFS #> + ' checked ' + (<# angularMultiSelectConstants.INTERNAL_STATS_CHECKED_LEAFS #> === 1 ? 'item': 'items')
+                            ]>"
+                            node-label="<[ text ]> (checked
+                                <# angularMultiSelectConstants.INTERNAL_KEY_CHECKED_CHILDREN #> /
+                                <# angularMultiSelectConstants.INTERNAL_KEY_CHILDREN_LEAFS #>)"
+                            leaf-label="<[ text ]> (<[ value ]>)"
+
+                            search-field="text"
+                        >
+
+                        </div>
+
+                    </div>
+
+                </div>
+
             </div>
+
+
+
         </div>
 
-
-
-        <button class="btn btn-success" type="submit"> Guardar</button>
-    </form>
+   </form>
 
 </div>

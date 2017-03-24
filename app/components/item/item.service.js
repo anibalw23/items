@@ -11,7 +11,6 @@ myApp.service('ItemService', function($http) {
         return $http.get('/api/items/' + id).then(function(response){
             var result = [];
             result = response.data;
-            console.log(result);
             return result;
         });
     }
@@ -20,7 +19,6 @@ myApp.service('ItemService', function($http) {
         return $http.delete('/api/items/' + id).then(function(response){
             var result = [];
             result = response.data;
-            console.log(result);
             return result;
         });
     }

@@ -19,7 +19,7 @@ exports.list_all_items = function(req, res) {
 
 exports.find_item = function(req, res) {
   res.setHeader('Content-Type', 'application/json');
-    Proyecto.findOne({'_id' : req.params.id },function(err, items) {
+    Item.findOne({'_id' : req.params.id },function(err, items) {
         if(err) {
             res.send(err);
         }
@@ -29,7 +29,7 @@ exports.find_item = function(req, res) {
 
 exports.delete_item = function(req, res) {
   res.setHeader('Content-Type', 'application/json');
-    Proyecto.findByIdAndRemove({'_id' : req.params.id },function(err, item) {
+    Item.findByIdAndRemove({'_id' : req.params.id },function(err, item) {
         if(err) {
             res.send(err);
         }
@@ -37,7 +37,7 @@ exports.delete_item = function(req, res) {
             message: "Proyecto Borrado Exitosamente!",
             id: item._id
         };
-        res.send(res);
+        res.send(response);
     });
 };
 
@@ -71,9 +71,11 @@ exports.edit_item = function(req, res) {
 exports.create_item = function(req, res) {
     console.log("Req = " + req.body);
     console.log(req.body);
-    Item.create({
+    if(req.body.tipo_pregunta == "seleccion_multiple"){
+         Item.create({
             titulo : req.body.titulo,
             tipo_pregunta : req.body.tipo_pregunta,
+             choices: req.body.choices,
         }, function(err, item) {
             if (err)
                 res.send(err);
@@ -85,4 +87,9 @@ exports.create_item = function(req, res) {
                 res.json(item);
             });
         });
+
+
+    }
+
+
 };

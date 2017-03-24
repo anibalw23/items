@@ -1,6 +1,7 @@
 
 var ItemCreateModule = angular.module("ItemCreateModule",[
     'ui.router',
+    'angular-multi-select',
 ]);
 
 ItemCreateModule.component('itemCreate',{

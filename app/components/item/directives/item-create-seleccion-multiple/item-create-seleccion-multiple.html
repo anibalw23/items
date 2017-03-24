@@ -1,0 +1,7 @@
+  <fieldset  data-ng-repeat="choice in model ">
+       <input type="text" ng-model="model[$index].titulo" name="" placeholder="Escriba la opcion" >
+       <input type="number" ng-model="model[$index].peso" name="" placeholder="peso" >
+       Es Correcta?<input type="checkbox" ng-model="model[$index].esCorrecta" name="" placeholder="es correcta" >
+       <button class="remove" ng-show="$last" ng-click="removeChoice()">-</button>
+   </fieldset>
+   <a class="btn btn-info" ng-click="addNewChoice()">Añadir Opciones</a>

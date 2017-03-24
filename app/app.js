@@ -1,70 +1,14 @@
 var myApp = angular.module("myApp",[
     'ui.router',
-    'schemaForm',
-    'ItemCreateModule'
+    'ItemCreateModule',
+    'ItemDeleteModule',
 ]);
 
-/*myApp.controller('MainCtrl', function($scope) {
-
+myApp.controller('MainCtrl', function($scope) {
     console.log("My App");
 
-    $scope.schema = {
-
-    "type": "object",
-    "title": "Comment",
-    "properties": {
-      "name": {
-        "title": "Name",
-        "type": "string",
-        "required":true
-      },
-      "email": {
-        "title": "Email",
-        "type": "string",
-        "pattern": "^\\S+@\\S+$",
-        "description": "Email will be used for evil."
-      },
-      "comment": {
-        "title": "Comment",
-        "type": "string",
-        "maxLength": 20,
-        "validationMessage": "Don't be greedy!"
-      }
-    },
-    "required": [
-      "email",
-      "comment"
-    ]
-
-  };
-
-
-  $scope.form = [
-
-    "test", {
-      key: "name",
-
-    }, {
-      key: "email",
-
-    }, {
-      key: "comment",
-      type: "textarea",
-      placeholder: "Make a comment",
-
-    }, {
-      type: "submit",
-      style: "btn-info",
-      title: "OK"
-    },
-
-  ];
-
-
-
-  $scope.model = {};
 });
-*/
+
 
 
 
@@ -118,6 +62,11 @@ myApp.config( function($stateProvider, $urlRouterProvider){
         url:'items/details/:id',
         templateUrl:'/app/components/item/item-details/item-details.html',
         controller:'itemDetails'
+    })
+    .state('deleteItem',{
+        url:'items/delete/:id',
+        templateUrl:'/app/components/item/item-delete/item-delete.html',
+        controller:'itemDelete'
     })
 
 });
