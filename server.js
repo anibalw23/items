@@ -41,6 +41,39 @@ app.get('/api/items/:id',  itemController.find_item);
 app.delete('/api/items/:id',  itemController.delete_item);
 app.put('/api/items/',  itemController.edit_item);
 
+/*Controlador de clasificadores*/
+var clasificadorController = require('./controllers/clasificador');
+app.get('/api/clasificadores',  clasificadorController.list_all_clasificadores);
+app.post('/api/clasificadores',  clasificadorController.create_clasificador);
+app.get('/api/clasificadores/:id',  clasificadorController.find_clasificador);
+app.delete('/api/clasificadores/:id',  clasificadorController.delete_clasificador);
+app.put('/api/clasificadores/',  clasificadorController.edit_clasificador);
+
+
+
+
+/*var mongoose = require('mongoose');
+var Clasificador = require('./models/clasificador').Clasificador;
+cat = new Clasificador({label: "Familia 1"});
+cat.save(function(err, foods){
+    // append new sub category
+    foods.appendChild({label: "Familia 1.1"}, function(err, vega){
+        // vega: { name: "Vegetables", parentId: [foods ID], path: ',[foods ID]' }
+    });
+    foods.appendChild({label: "Familia 1.2"}, function(err, vega){
+        // vega: { name: "Vegetables", parentId: [foods ID], path: ',[foods ID]' }
+    });
+    // or make new
+    //var vega = new Clasificador({label: "Vegetables"});
+    // saving with append
+    //foods.appendChild(vega, function(err, data){  });
+    // or save traditional way
+    //vega.parentId = foods._id;
+    //vega.save(function(err, data){ });
+});*/
+
+
+
 
 
 

@@ -1,0 +1,13 @@
+<h3>item {{item.titulo}}</h3>
+
+<div class="panel panel-default">
+    <div class="panel-heading">{{item.titulo}}</div>
+    <div class="panel-body">
+        <b>Tipo de Pregunta:</b>   {{item.tipo_pregunta}}
+      <div ng-repeat="choice in  item.choices">
+        Titulo: {{choice.titulo}}
+        Peso:{{choice.peso}}
+        Es Correcta?:{{choice.esCorrecta}}
+      </div>
+    </div>
+</div>

@@ -467,6 +467,26 @@
                   }
                 }
               };
+
+              tree.remove_branch = function (branch) {
+                   console.log("remove_branch!");
+                                branch = branch || selected_branch;
+
+                                if (branch) {
+                                    var parent;
+                                    if (branch.parent_uid) {
+                                        parent = tree.get_parent_branch(branch).children;
+                                        //console.log(parent)
+                                    } else {
+                                        parent = scope.treeData;
+                                    }
+                                    var index = parent.indexOf(branch);
+                                    parent.splice(index, 1);
+                                }
+               };
+
+
+
               return tree.select_prev_branch = function(b) {
                 var prev;
                 if (b == null) {

@@ -2,6 +2,9 @@ var myApp = angular.module("myApp",[
     'ui.router',
     'ItemCreateModule',
     'ItemDeleteModule',
+    'ItemDetailsModule',
+    'ClasificadorModule',
+    'angularBootstrapNavTree'
 ]);
 
 myApp.controller('MainCtrl', function($scope) {
@@ -18,6 +21,7 @@ myApp.config( function($stateProvider, $urlRouterProvider){
     $stateProvider.state('inicio',{
         url:'/',
         templateUrl:'/app/components/home/home.html'
+
     })
     .state('proyectos', {
         url:'proyectos',
@@ -68,5 +72,13 @@ myApp.config( function($stateProvider, $urlRouterProvider){
         templateUrl:'/app/components/item/item-delete/item-delete.html',
         controller:'itemDelete'
     })
+    .state('clasificadores', {
+        url:'clasificadores',
+        templateUrl:'/app/components/clasificador/clasificador-list/clasificador-list.html',
+        controller:'clasificadorList'
+    })
+
+
+
 
 });

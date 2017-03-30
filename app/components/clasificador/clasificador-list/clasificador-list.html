@@ -1,0 +1,33 @@
+    <div id="actions" style="margin-top:30px;">
+        <a class="btn btn-success" ng-click="mode='add'">Add</a>
+        <a class="btn btn-default" ng-click="mode='edit'">Edit</a>
+        <a class="btn btn-danger" ng-click="mode='delete'">Delete</a>
+    </div>
+    <div ng-show="mode =='add'">
+        <h4>Nueva Clasificacion</h4>
+        <label>nombre</label> <input ng-model="createCategory.label" />
+        <input type="button"  value="DONE" ng-click="add()" />
+    </div>
+
+    <div ng-show="mode =='edit'">
+        <h4>Editar Clasificacion</h4>
+        <label>nombre</label> <input type="text" ng-model="selectedCategory"  />
+        <input type="button"  value="DONE" ng-click="edit()" />
+    </div>
+
+    <div ng-show="mode =='delete'">
+        <h4>Esta seguro que desea borrar esta clasificacion?</h4>
+         <input type="button"  value="DONE" ng-click="delete()" />
+    </div>
+
+
+
+    <div class="panel-group" style="max-width:350px;">
+      <div class="panel panel-default">
+        <div  class="panel-heading">Clasificadores</div>
+        <div class="panel-body">
+          <abn-tree tree-data="treedata" tree-control= "my_tree"  on-select= "my_tree_handler(branch)"></abn-tree>
+        </div>
+      </div>
+    </div>
+   <div style="width:300px" class="alert alert-warning">{{ selectedCategory }}</div>
