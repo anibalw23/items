@@ -2,6 +2,7 @@
 var ItemCreateModule = angular.module("ItemCreateModule",[
     'ui.router',
     'angular-multi-select',
+    'ClasificadorModule'
 ]);
 
 ItemCreateModule.component('itemCreate',{

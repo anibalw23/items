@@ -1,41 +1,60 @@
 
-<div class="container bootstrap snippet">
-  <div class="header">
-    <h3 class="text-muted prj-name">
-        <span class="fa fa-users fa-2x principal-title"></span>
-        Lista de Items
-    </h3>
-  </div>
 
 
-  <div class="jumbotron list-content">
-    <ul class="list-group">
-       <a ui-sref="CreateItem" href="#/items/create" class="btn btn-default">Crear Nuevo Item</a>
-      <li href="#" class="list-group-item title">
-        Lista de Items
-      </li>
+   <div class="row">
+       <div class="col-md-3" style="margin-top:50px;">
+           <div class="panel-group">
+              <div class="panel panel-default">
+                  <div class="panel-heading">Busqueda de Items</div>
+                <div class="panel-body">
+                    <item-simple-search outputmodel="output_item_search"></item-simple-search>
+                </div>
+              </div>
+            </div>
+       </div>
 
-      <li ng-repeat="item in items" href="#" class="list-group-item text-left">
-          <span style="font-size:25px;" class="img-thumbnail glyphicon glyphicon-book"  > </span>
-           <label class="name">{{ item.titulo }}</label>
 
-        <label class="pull-right">
-            <a ui-sref="detailsItem({id: item._id})" class="btn btn-success btn-xs glyphicon glyphicon-ok"  title="Ver"></a>
-            <a ui-sref="deleteItem({id: item._id})" class="btn btn-danger  btn-xs glyphicon glyphicon-trash" href="#" title="Borrar"></a>
-            <a  ui-sref="editItem({id: item._id})"  class="btn btn-info  btn-xs glyphicon glyphicon glyphicon-comment" href="#" title="Editar Item"></a>
-        </label>
-        <div class="break"></div>
-      </li>
+        <div class="col-md-8">
+            <div class="header">
+                <h3 class="text-muted prj-name">
+                    <span class="fa fa-users fa-2x principal-title"></span>
+                    Lista de Items
+                </h3>
+           </div>
+             <div class="jumbotron list-content">
+                <ul class="list-group">
+                   <a ui-sref="CreateItem" href="#/items/create" class="btn btn-default">Crear Nuevo Item</a>
+                  <li href="#" class="list-group-item title">
+                    Lista de Items
+                  </li>
 
-      <li href="#" class="list-group-item text-left">
-        <a class="btn btn-block btn-primary">
-            <i class="glyphicon glyphicon-refresh"></i>
-            Cargar Mas...
-        </a>
-      </li>
-    </ul>
-  </div>
-  </div>
+                  <li ng-repeat="item in items" href="#" class="list-group-item text-left">
+                      <span style="font-size:25px;" class="img-thumbnail glyphicon glyphicon-book"  > </span>
+                       <label class="name">{{ item.titulo }}</label>
+
+                    <label class="pull-right">
+                        <a ui-sref="detailsItem({id: item._id})" class="btn btn-success btn-xs glyphicon glyphicon-ok"  title="Ver"></a>
+                        <a ui-sref="deleteItem({id: item._id})" class="btn btn-danger  btn-xs glyphicon glyphicon-trash" href="#" title="Borrar"></a>
+                        <a  ui-sref="editItem({id: item._id})"  class="btn btn-info  btn-xs glyphicon glyphicon glyphicon-comment" href="#" title="Editar Item"></a>
+                    </label>
+                    <div class="break"></div>
+                  </li>
+
+                  <li href="#" class="list-group-item text-left">
+                    <a class="btn btn-block btn-primary">
+                        <i class="glyphicon glyphicon-refresh"></i>
+                        Cargar Mas...
+                    </a>
+                  </li>
+                </ul>
+              </div>
+
+
+           </div>
+
+    </div>
+
+
 <div>
 
 

@@ -25,7 +25,7 @@ function itemCreateController($scope, $http, $state , ItemService, ClasificadorS
 
     //Create POST:
     $scope.create = function () {
-        console.log($scope);
+        $scope.item.clasificadores = $scope.output_data;
         ItemService.create($scope.item).then(function (response) {
              $scope.items = response;
              $state.go('items');

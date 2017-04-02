@@ -75,7 +75,8 @@ exports.create_item = function(req, res) {
          Item.create({
             titulo : req.body.titulo,
             tipo_pregunta : req.body.tipo_pregunta,
-             choices: req.body.choices,
+            choices: req.body.choices,
+            clasificadores: req.body.clasificadores,
         }, function(err, item) {
             if (err)
                 res.send(err);

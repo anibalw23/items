@@ -1,5 +1,6 @@
 var myApp = angular.module("myApp",[
     'ui.router',
+    'ItemModule',
     'ItemCreateModule',
     'ItemDeleteModule',
     'ItemDetailsModule',
