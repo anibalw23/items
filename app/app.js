@@ -5,6 +5,7 @@ var myApp = angular.module("myApp",[
     'ItemDeleteModule',
     'ItemDetailsModule',
     'ClasificadorModule',
+    'BancoPreguntaModule',
     'angularBootstrapNavTree'
 ]);
 
@@ -51,8 +52,15 @@ myApp.config( function($stateProvider, $urlRouterProvider){
     })
     .state('bancopreguntas', {
         url:'bancopreguntas',
-        templateUrl:'/views/partials/bancopreguntas.html'
+        templateUrl:'/app/components/bancopregunta/bancopregunta-list/bancopregunta-list.html',
+        controller:'bancopreguntaList'
     })
+    .state('CreateBancoPregunta', {
+        url:'bancopreguntas/create',
+        templateUrl:'/app/components/bancopregunta/bancopregunta-create/bancopregunta-create.html',
+        controller:'bancopreguntaCreate'
+    })
+
     .state('items', {
         url:'items',
         templateUrl:'/app/components/item/item-list/item-list.html',

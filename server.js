@@ -38,7 +38,8 @@ var itemController = require('./controllers/item');
 app.get('/api/items',  itemController.list_all_items);
 app.post('/api/items',  itemController.create_item);
 app.get('/api/items/:id',  itemController.find_item);
-app.delete('/api/items/:id',  itemController.delete_item);
+app.post('/api/itemsByClasificadores',  itemController.findByClasificatores);
+app.delete('/api/items/',  itemController.delete_item);
 app.put('/api/items/',  itemController.edit_item);
 
 /*Controlador de clasificadores*/
@@ -48,6 +49,15 @@ app.post('/api/clasificadores',  clasificadorController.create_clasificador);
 app.get('/api/clasificadores/:id',  clasificadorController.find_clasificador);
 app.delete('/api/clasificadores/:id',  clasificadorController.delete_clasificador);
 app.put('/api/clasificadores/',  clasificadorController.edit_clasificador);
+
+
+var bancopreguntasController = require('./controllers/bancopregunta');
+app.get('/api/bancopreguntas',  bancopreguntasController.list_all_bancopreguntas);
+app.post('/api/bancopreguntas',  bancopreguntasController.create_bancopregunta);
+app.get('/api/bancopreguntas/:id',  bancopreguntasController.find_bancopregunta);
+app.delete('/api/bancopreguntas/:id',  bancopreguntasController.delete_bancopregunta);
+app.put('/api/bancopreguntas/',  bancopreguntasController.edit_bancopregunta);
+
 
 
 

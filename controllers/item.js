@@ -7,7 +7,7 @@ var Item = require('../models/item').Item;
 
 
 exports.list_all_items = function(req, res) {
-   res.setHeader('Content-Type', 'application/json');
+   //res.setHeader('Content-Type', 'application/json');
     Item.find(function(err, items) {
         if(err) {
             res.send(err);
@@ -69,8 +69,7 @@ exports.edit_item = function(req, res) {
 
 
 exports.create_item = function(req, res) {
-    console.log("Req = " + req.body);
-    console.log(req.body);
+
     if(req.body.tipo_pregunta == "seleccion_multiple"){
          Item.create({
             titulo : req.body.titulo,
@@ -94,3 +93,27 @@ exports.create_item = function(req, res) {
 
 
 };
+
+exports.findByClasificatores = function(req, res) {
+    console.log(req.body.params.clasificadoresIds);
+
+    var arr = req.body.params.clasificadoresIds;
+
+    Item.find({clasificadores : {
+      $in: arr.map(function(o){
+          console.log("o = " + o);
+          return mongoose.Types.ObjectId(o);
+      })
+     }}, function(err, items) {
+        console.log("items = " + items);
+        if(err) {
+            res.send(err);
+        }
+        res.send(JSON.stringify(items));
+    });
+
+
+
+};
+
+

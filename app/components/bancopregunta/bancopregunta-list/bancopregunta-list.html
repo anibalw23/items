@@ -1,0 +1,37 @@
+        <div class="col-md-8">
+            <div class="header">
+                <h3 class="text-muted prj-name">
+                    <span class="fa fa-users fa-2x principal-title"></span>
+                     Bancos de Preguntas
+                </h3>
+           </div>
+             <div class="jumbotron list-content">
+                <ul class="list-group">
+                   <a ui-sref="CreateBancoPregunta" href="#/bancopreguntas/create" class="btn btn-default">Crear Nuevo Banco</a>
+                  <li href="#" class="list-group-item title">
+                    Lista de Bancos
+                  </li>
+
+                  <li ng-repeat="banco in bancos" href="#" class="list-group-item text-left">
+                      <span style="font-size:25px;" class="img-thumbnail glyphicon glyphicon-book"  > </span>
+                       <label class="name">{{ banco.titulo }}</label>
+
+                    <label class="pull-right">
+                        <a ui-sref="detailsBancoPregunta({id: banco._id})" class="btn btn-success btn-xs glyphicon glyphicon-ok"  title="Ver"></a>
+                        <a ui-sref="deleteBancoPregunta({id: banco._id})" class="btn btn-danger  btn-xs glyphicon glyphicon-trash" href="#" title="Borrar"></a>
+                        <a  ui-sref="editBancoPregunta({id: banco._id})"  class="btn btn-info  btn-xs glyphicon glyphicon glyphicon-comment" href="#" title="Editar Item"></a>
+                    </label>
+                    <div class="break"></div>
+                  </li>
+
+                  <li href="#" class="list-group-item text-left">
+                    <a class="btn btn-block btn-primary">
+                        <i class="glyphicon glyphicon-refresh"></i>
+                        Cargar Mas...
+                    </a>
+                  </li>
+                </ul>
+              </div>
+
+
+           </div>

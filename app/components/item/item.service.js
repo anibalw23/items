@@ -42,4 +42,19 @@ myApp.service('ItemService', function($http) {
         });
     }
 
+
+    this.findByClasificators = function(clasificadoresIds){
+        console.log("findByClasificators item.service");
+        console.log(clasificadoresIds);
+        return $http.post('/api/itemsByClasificadores/', {params: { clasificadoresIds: clasificadoresIds }} ).then(function(response){
+            var result = [];
+            result = response.data;
+            return result;
+        });
+
+    }
+
+
+
+
 });
