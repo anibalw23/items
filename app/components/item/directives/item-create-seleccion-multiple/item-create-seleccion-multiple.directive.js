@@ -6,8 +6,6 @@ ItemCreateModule.directive("seleccionMultiple", function() {
 
         templateUrl: '/app/components/item/directives/item-create-seleccion-multiple/item-create-seleccion-multiple.html',
         controller: function($scope){
-           // $scope.item = {};
-           // $scope.item.choices = [];
            $scope.inputCounter = 0;
             $scope.model = [];
             $scope.addNewChoice = function(){

@@ -5,7 +5,8 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <base href="/" />
+ <!-- <base href="/" /> -->
+
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
@@ -19,6 +20,7 @@
 
  <script src="app/shared/angular-nav-tree/abn_tree_directive.js"></script>
  <link rel="stylesheet" href="app/shared/angular-nav-tree/abn_tree.css">
+
 
 
   <script src="/app/app.js"></script>
@@ -80,6 +82,32 @@
  <script src="app/components/bancopregunta/bancopregunta-create/bancopregunta-create.controller.js"></script>
 
 
+<script src="bower_components/api-check/dist/api-check.js"></script>
+<script src="bower_components/angular-formly/dist/formly.js"></script>
+<script src="bower_components/angular-formly-templates-bootstrap/dist/angular-formly-templates-bootstrap.js"></script>
+
+ <script  src="app/components/quiz/quiz.component.js"></script>
+ <script  src="app/components/quiz/quiz.service.js"></script>
+
+ <script  src="app/components/quiz/quiz-take/quiz-take.component.js"></script>
+ <script  src="app/components/quiz/quiz-take/quiz-take.controller.js"></script>
+
+ <script  src="app/components/quiz/quiz-list/quiz-list.component.js"></script>
+ <script  src="app/components/quiz/quiz-list/quiz-list.controller.js"></script>
+
+ <script  src="app/components/quiz/quiz-import-items/quiz-import-items.component.js"></script>
+ <script  src="app/components/quiz/quiz-import-items/directives/quiz-import-items.directive.js"></script>
+
+
+ <script  src="app/components/quiz/quiz-create/quiz-create.component.js"></script>
+ <script  src="app/components/quiz/quiz-create/quiz-create.controller.js"></script>
+
+
+ <script src="app/components/quiz/directives/quiz-items/quiz-items.directive.js"></script>
+ <script src="app/components/item/directives/item-seleccion-multiple/item-seleccion-multiple.directive.js"></script>
+
+ <script src="app/components/quiz/directives/quiz/quiz.directive.js"></script>
+
   <style>
     /* Remove the navbar's default margin-bottom and rounded borders */
     .navbar {
@@ -134,7 +162,8 @@
       <ul class="nav navbar-nav">
         <li class="active"><a ui-sref="inicio" href="#/">Inicio</a></li>
         <li><a  ui-sref="proyectos" href="#/proyectos">Proyectos</a></li>
-        <li><a ui-sref="bancopreguntas" href="#/bancopreguntas">Banco de Preguntas</a></li>
+        <li><a  ui-sref="quizes" href="#/quizes">Quizes</a></li>
+         <!--  <li><a ui-sref="bancopreguntas" href="#/bancopreguntas">Banco de Preguntas</a></li>-->
         <li><a ui-sref="clasificadores" href="#/clasificadores">Clasificadores</a></li>
         <li><a ui-sref="items" href="#/items">Items</a></li>
         <li><a  href="#/estadisticas">Estadisticas</a></li>

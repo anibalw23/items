@@ -1,0 +1,15 @@
+
+<div>
+    <item-simple-search item-data="result"></item-simple-search>
+
+    <li ng-repeat="item in result" href="#" class="list-group-item text-left">
+      <input type="checkbox" ng-model="selectedItems[$index]" value="{{item._id}}"
+         ng-change="changeItem(item._id)"
+         ng-true-value="'{{item._id}}'"
+         ng-false-value=""
+       >
+      <label class="name">{{ item.titulo }}</label>
+      <div class="break"></div>
+    </li>
+     <pre>{{selectedItems | json}}</pre>
+</div>

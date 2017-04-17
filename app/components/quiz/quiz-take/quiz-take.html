@@ -1,0 +1,46 @@
+
+
+<div id="myQuiz">
+        <div class="panel">
+             <quiz quiz-id="quizId" answers="answers"></quiz>
+        </div>
+
+    <pre>
+    {{answers | json }}
+    </pre>
+
+		<!-- <div class="progress">
+			<div class="{{($index === activeQuestion) ? 'on' : 'off'}}"
+			{{ (myQuestion.questionState === 'answered') ? 'answered' : 'unanswered' ) }}
+			{{ (myQuestion.correctness === 'correct') ? 'correct' : 'incorrect' ) }}
+			ng-repeat="myQuestion in myQuestions"></div>
+
+		</div>
+		<div class="intro {{  (activeQuestion >-1) ? 'inactive' : 'active' }}">
+			<h2>Bienvenidos</h2>
+			<p>Haga click en empezar para iniciar la prueba</p>
+			<p class="btn" ng-click="activeQuestion = 0">Empezar</p>
+		</div>
+		<div class="question
+		{{($index === activeQuestion) ? 'active' : 'inactive' }}
+		{{(myQuestion.questionState === 'answered') ? 'answered' : 'unanswered' }}
+		" ng-repeat="myQuestion in myQuestions">
+			<p class="txt">{{ myQuestion.question }}</p>
+			<p class="ans"
+			ng-class="{
+			selected:isSelected($parent.$index, $index),
+			correct:isCorrect($parent.$index, $index)}"
+			ng-click = "selectAnswer($parent.$index,$index)"
+			ng-repeat="Answer in myQuestions[$index].answers">{{Answer.text}}</p>
+			<div class="feedback">
+				<p ng-show=" myQuestion.correctness === 'correct'">Usted ha seleccionado la respuesta <strong>correcta</strong></p>
+				<p ng-show=" myQuestion.correctness === 'incorrect'">Usted ha seleccionado la respuesta incorrecta</p>
+				<p>{{myQuestion.feedback}}</p>
+				<div class="btn" ng-click="selectContinue()">Continuar</div>
+
+			</div>
+		</div>
+-->
+
+
+	</div>

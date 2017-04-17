@@ -5,10 +5,9 @@
        <div class="col-md-3" style="margin-top:50px;">
            <div class="panel-group">
               <div class="panel panel-default">
-                  <div class="panel-heading">Busqueda de Items</div>
+                  <div class="panel-heading">Busqueda de Quizes</div>
                 <div class="panel-body">
-                    <item-simple-search item-data="items">
-                    </item-simple-search>
+
                 </div>
               </div>
             </div>
@@ -25,26 +24,24 @@
              <div class="jumbotron list-content">
                 <ul class="list-group">
                     <div class="form-group">
-                        <a ui-sref="CreateItem" href="#/items/create" class="btn btn-default">Crear Nuevo Item</a>
-                        <select name="actions">
-                            <option value="">Seleccione...</option>
-                        </select>
-
+                        <a ui-sref="CreateQuiz" href="#/quizes/create" class="btn btn-default">Crear Nuevo Quiz</a>
                     </div>
 
 
                   <li href="#" class="list-group-item title">
-                    Lista de Items
+                    Lista de Quizes
                   </li>
 
-                  <li ng-repeat="item in items" href="#" class="list-group-item text-left">
-                      <input type="checkbox" model="item.isSelected">
-                      <label class="name">{{ item.titulo }}</label>
+                  <li ng-repeat="quiz in quizes" href="#" class="list-group-item text-left">
+                      <label class="name">{{ quiz.titulo }}</label>
 
                     <label class="pull-right">
-                        <a ui-sref="detailsItem({id: item._id})" class="btn btn-success btn-xs glyphicon glyphicon-ok"  title="Ver"></a>
-                        <a ui-sref="deleteItem({id: item._id})" class="btn btn-danger  btn-xs glyphicon glyphicon-trash" href="#" title="Borrar"></a>
-                        <a  ui-sref="editItem({id: item._id})"  class="btn btn-info  btn-xs glyphicon glyphicon glyphicon-comment" href="#" title="Editar Item"></a>
+                        <a ui-sref="detailsQuiz({id: quiz._id})" class="btn btn-success btn-xs glyphicon glyphicon-ok"  title="Ver"></a>
+                        <a ui-sref="deleteQuiz({id: quiz._id})" class="btn btn-danger  btn-xs glyphicon glyphicon-trash" href="#" title="Borrar"></a>
+                        <a  ui-sref="editQuiz({id: quiz._id})"  class="btn btn-info  btn-xs glyphicon glyphicon glyphicon-comment" href="#" title="Editar"></a>
+                        <a  ui-sref="takeQuiz({id: quiz._id})"  class="btn btn-warning  btn-xs glyphicon glyphicon glyphicon-pencil" href="#" title="Tomar Quiz"></a>
+
+
                     </label>
                     <div class="break"></div>
                   </li>

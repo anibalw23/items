@@ -1,0 +1,29 @@
+<ul>
+   <div ng-repeat="choice in choices" >
+
+       <div ng-switch="choiceType">
+            <div class="checkbox" ng-switch-when="">
+                <div class="form-inline">
+                    <label>
+                        <input type="radio" name="answers[$index]" value="{{choice._id}}"/>
+                        {{ choice.titulo }}
+                    </label>
+                </div>
+            </div>
+
+           <div class="checkbox" ng-switch-when="seleccion_multiple">
+                <div class="form-inline">
+                    <label>
+                        <input type="checkbox"  value="{{choice._id}}"
+                            ng-click="addAnswer(choice,$index)"
+                            ng-model="selectedChoices[$index]"
+                        />
+                        {{ choice.titulo }}
+                    </label>
+                </div>
+            </div>
+       </div>
+
+    </div>
+</ul>
+ {{ selectedChoices | json  }}

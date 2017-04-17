@@ -1,5 +1,5 @@
 /*
-Controlador Item.
+Controlador Banco Pregunta.
 */
 
 var mongoose = require('mongoose');

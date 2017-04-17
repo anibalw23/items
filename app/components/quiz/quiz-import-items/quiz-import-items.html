@@ -1,0 +1,22 @@
+
+
+
+<div ng-controller="quizImportItems">
+    <h2> Importar Lista de Items Manualmente</h2>
+    <item-simple-search item-data="items" map-response="mapResponse()"></item-simple-search>
+
+    <li ng-repeat="item in items" href="#" class="list-group-item text-left">
+      <input type="checkbox" ng-model="checkboxItems[$index]" value="{{item._id}}"
+         ng-change="changeItem(item._id)"
+         ng-true-value="'{{item._id}}'"
+         ng-false-value=""
+       >
+      <label class="name">{{ item.titulo }}</label>
+      <div class="break"></div>
+    </li>
+     <pre>{{checkboxItems | json}}</pre>
+</div>
+
+
+
+

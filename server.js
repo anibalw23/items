@@ -59,6 +59,14 @@ app.delete('/api/bancopreguntas/:id',  bancopreguntasController.delete_bancopreg
 app.put('/api/bancopreguntas/',  bancopreguntasController.edit_bancopregunta);
 
 
+var quizController = require('./controllers/quiz');
+app.get('/api/quiz',  quizController.list_all_quizes);
+app.post('/api/quiz',  quizController.create_quiz);
+app.get('/api/quiz/:id',  quizController.find_quiz);
+app.delete('/api/quiz/:id',  quizController.delete_quiz);
+app.put('/api/quiz/',  quizController.edit_quiz);
+
+
 
 
 

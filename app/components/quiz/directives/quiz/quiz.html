@@ -1,0 +1,36 @@
+
+
+<div  ng-show="inProgress">
+    <div ng-show="!quizOver">
+	</div>
+    <div ng-show="quizOver">
+		<h2>Quiz is over</h2>
+		<button ng-click="reset()">Play again</button>
+	</div>
+
+	<div id="score">
+	</div>
+
+    <div class="panel panel-default" ng-init="getQuiz(quizId)">
+      <div class="panel-heading">
+        {{quiz.titulo}}
+      </div>
+      <div class="panel-body">
+      <!--  <quiz-items items="quiz.items" answers="answers">
+        </quiz-items> -->
+        <formly-form model="model" fields="fields">
+        </formly-form>
+        <pre>{{model | json}}</pre>
+
+
+
+        <button class="btn btn-success" ng-click="end()">Enviar Respuestas</button>
+      </div>
+    </div>
+</div>
+
+<div class="intro" ng-show="!inProgress">
+	<p>Welcome to the QuizApp</p>
+	<button id="startQuiz" ng-click="start()">Start the Quiz</button>
+</div>
+
