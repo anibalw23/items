@@ -101,7 +101,6 @@ exports.findByClasificatores = function(req, res) {
 
     Item.find({clasificadores : {
       $in: arr.map(function(o){
-          console.log("o = " + o);
           return mongoose.Types.ObjectId(o);
       })
      }}, function(err, items) {

@@ -22,8 +22,24 @@
  <link rel="stylesheet" href="app/shared/angular-nav-tree/abn_tree.css">
 
 
-
   <script src="/app/app.js"></script>
+  <script src="bower_components/tv4/tv4.js"></script>
+  <script src="bower_components/objectpath/lib/ObjectPath.js"></script>
+  <script src="bower_components/angular-schema-form/dist/schema-form.js"></script>
+  <script src="bower_components/angular-schema-form/dist/bootstrap-decorator.min.js"></script>
+
+
+
+  <!-- AngularJS Material -->
+<link rel="stylesheet" href="bower_components/angular-material/angular-material.css">
+<script src="bower_components/angular-animate/angular-animate.js"></script>
+<script src="bower_components/angular-aria/angular-aria.js"></script>
+<script src="bower_components/angular-material/angular-material.js"></script>
+<link rel="stylesheet" href="bower_components/angular-material-icons/angular-material-icons.css">
+<script src="bower_components/angular-material-icons/angular-material-icons.js"></script>
+ <!-- End AngularJS Material -->
+
+
 
   <script src="/app/components/proyecto/proyecto.service.js"></script>
   <script src="/app/components/item/item.service.js"></script>
@@ -89,6 +105,12 @@
  <script  src="app/components/quiz/quiz.component.js"></script>
  <script  src="app/components/quiz/quiz.service.js"></script>
 
+
+ <script  src="app/components/quiz-response/quiz-response.component.js"></script>
+ <script  src="app/components/quiz-response/quiz-response.service.js"></script>
+ <script src="app/components/quiz-response/quiz-response-list/quiz-response-list.component.js"> </script>
+ <script src="app/components/quiz-response/quiz-response-list/quiz-response-list.controller.js"> </script>
+
  <script  src="app/components/quiz/quiz-take/quiz-take.component.js"></script>
  <script  src="app/components/quiz/quiz-take/quiz-take.controller.js"></script>
 
@@ -101,6 +123,13 @@
 
  <script  src="app/components/quiz/quiz-create/quiz-create.component.js"></script>
  <script  src="app/components/quiz/quiz-create/quiz-create.controller.js"></script>
+
+ <script  src="app/components/quiz/quiz-details/quiz-details.component.js"></script>
+ <script  src="app/components/quiz/quiz-details/quiz-details.controller.js"></script>
+
+ <script  src="app/components/quiz/quiz-delete/quiz-delete.component.js"></script>
+ <script  src="app/components/quiz/quiz-delete/quiz-delete.controller.js"></script>
+
 
 
  <script src="app/components/quiz/directives/quiz-items/quiz-items.directive.js"></script>
@@ -142,40 +171,29 @@
     }
   </style>
 </head>
-<body ng-app="myApp" >
+<body ng-app="myApp" ng-controller="MainCtrl" >
 
 <notifications-bar class="notifications"></notifications-bar>
 
-<nav class="navbar navbar-inverse">
-  <div class="container-fluid">
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-      <a class="navbar-brand" href="#">
-          SIMP
-      </a>
-    </div>
-    <div class="collapse navbar-collapse" id="myNavbar">
-      <ul class="nav navbar-nav">
-        <li class="active"><a ui-sref="inicio" href="#/">Inicio</a></li>
-        <li><a  ui-sref="proyectos" href="#/proyectos">Proyectos</a></li>
-        <li><a  ui-sref="quizes" href="#/quizes">Quizes</a></li>
-         <!--  <li><a ui-sref="bancopreguntas" href="#/bancopreguntas">Banco de Preguntas</a></li>-->
-        <li><a ui-sref="clasificadores" href="#/clasificadores">Clasificadores</a></li>
-        <li><a ui-sref="items" href="#/items">Items</a></li>
-        <li><a  href="#/estadisticas">Estadisticas</a></li>
-      </ul>
-      <ul class="nav navbar-nav navbar-right">
-        <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
-      </ul>
-    </div>
-  </div>
-</nav>
-
-
+<md-nav-bar
+  md-selected-nav-item="currentNavItem"
+  nav-bar-aria-label="navigation links">
+  <md-nav-item md-nav-click="goto('inicio')" name="Inicio">
+    Inicio
+  </md-nav-item>
+  <md-nav-item md-nav-click="goto('proyectos')" name="Proyectos">
+    Proyectos
+  </md-nav-item>
+  <md-nav-item md-nav-click="goto('quizes')" name="Quizes">
+    Quizes
+  </md-nav-item>
+  <md-nav-item md-nav-click="goto('clasificadores')" name="Clasificadores">
+    Clasificadores
+  </md-nav-item>
+  <md-nav-item md-nav-click="goto('items')" name="Items">
+    Items
+  </md-nav-item>
+</md-nav-bar>
 
 <div class="container-fluid text-center">
   <div class="row content">

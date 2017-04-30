@@ -1,4 +1,56 @@
 
+<div  layout="column" style="height:500px;" ng-cloak=""  >
+  <section layout="row" flex="">
+    <md-sidenav class="md-sidenav-left" md-component-id="left" md-whiteframe="4" id="leftSideNav" md-disable-backdrop="true">
+      <md-toolbar class="md-theme-indigo" layout="row">
+        <h1 class="md-toolbar-tools">Sidenav Left</h1>
+        <span flex></span>
+        <md-button ng-click="close()">Close</md-button>
+      </md-toolbar>
+      <md-content layout-padding="" layout="column" layout-align="start right">
+        <md-button ng-click="show('home')" class="md-primary">Show Home</md-button>
+        <md-button ng-click="show('work')" class="md-primary">Show Work</md-button>
+      </md-content>
+    </md-sidenav>
+
+    <md-content flex="" layout-padding="" layout="column" layout-align="top ">
+      <md-button ng-click="toggleLeft()" class="md-primary">
+        Toggle left
+      </md-button>
+      <div>
+    <md-toolbar md-scroll-shrink>
+        <div class="md-toolbar-tools">Items</div>
+    </md-toolbar>
+    <md-button class="md-primary md-raised" ui-sref="CreateItem" ng-href="#/items/create" >
+        Crear Item
+    </md-button>
+    <md-subheader class="md-no-sticky">Lista de Items</md-subheader>
+    <md-list-item ng-repeat="item in items" ng-click="" class="noright">
+        <p>{{ item.titulo }}</p>
+        <md-button ui-sref="detailsItem({id: item._id})" class="md-icon-button"  aria-label="Ver" title="Detalles">
+            <ng-md-icon icon="list" style="fill:gray" size="26"></ng-md-icon>
+        </md-button>
+
+        <md-button  ui-sref="editItem({id: item._id})"  class="md-icon-button" href="#" title="Editar">
+             <ng-md-icon icon="mode_edit" style="fill:orange" size="26"></ng-md-icon>
+        </md-button>
+
+         <md-button ui-sref="deleteItem({id: item._id})" class="md-icon-button" href="#" title="Borrar">
+            <ng-md-icon icon="delete" style="fill:red" size="26"></ng-md-icon>
+        </md-button>
+
+    </md-list-item>
+
+
+
+
+      </div>
+    </md-content>
+  </section>
+</div>
+
+
+
 
 
    <div class="row">

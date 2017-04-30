@@ -1,7 +1,9 @@
-<ul>
-   <div ng-repeat="choice in choices" >
 
-       <div ng-switch="choiceType">
+
+<ul>
+   <div ng-repeat="(i, choice) in choices track by $index" >
+
+       <div ng-switch="item.tipo_pregunta">
             <div class="checkbox" ng-switch-when="">
                 <div class="form-inline">
                     <label>
@@ -14,11 +16,18 @@
            <div class="checkbox" ng-switch-when="seleccion_multiple">
                 <div class="form-inline">
                     <label>
-                        <input type="checkbox"  value="{{choice._id}}"
-                            ng-click="addAnswer(choice,$index)"
-                            ng-model="selectedChoices[$index]"
+                        <md-checkbox aria-label="Select All"
+                         ng-model="isChecked"
+                         ng-click="changeCheckboxAnswer(item, choice, isChecked, i)"
+                         value="{{choice._id}}"
+                        >
+                    </md-checkbox>
+
+                       <!-- <input type="checkbox" value="{{choice._id}}"
+                            ng-model="isChecked"
+                            ng-click="changeCheckboxAnswer(item, choice, isChecked, i)"
                         />
-                        {{ choice.titulo }}
+                        {{ choice.titulo }}-->
                     </label>
                 </div>
             </div>
@@ -26,4 +35,4 @@
 
     </div>
 </ul>
- {{ selectedChoices | json  }}
+

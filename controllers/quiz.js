@@ -20,7 +20,7 @@ exports.find_quiz = function(req, res) {
   res.setHeader('Content-Type', 'application/json');
     Quiz.findOne({'_id' : req.params.id })
         .populate('items') // <--
-        .exec(function (err, quiz) {
+        .exec(function (err,    quiz) {
           if (err){
               res.send(err);
           }
@@ -39,7 +39,7 @@ exports.delete_quiz = function(req, res) {
             message: "Quiz Borrado Exitosamente!",
             id: quiz._id
         };
-        res.send(res);
+        res.send(JSON.stringify(response));
     });
 };
 

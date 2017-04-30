@@ -6,12 +6,19 @@ var myApp = angular.module("myApp",[
     'ItemDetailsModule',
     'ClasificadorModule',
     'QuizModule',
+    'QuizResponseModule',
     'BancoPreguntaModule',
-    'angularBootstrapNavTree'
+    'angularBootstrapNavTree',
+    'ngMaterial',
+    'ngMdIcons'
+
 ]);
 
-myApp.controller('MainCtrl', function($scope) {
+myApp.controller('MainCtrl', function($scope, $state) {
     console.log("My App");
+    $scope.goto =  function(stateName){
+        $state.go(stateName);
+    };
 
 });
 
@@ -66,6 +73,22 @@ myApp.config( function($stateProvider, $urlRouterProvider){
         url:'/quizes/take/:id',
         templateUrl:'/app/components/quiz/quiz-take/quiz-take.html',
         controller:'quizTake'
+    })
+    .state('detailsQuiz', {
+        url:'/quiz/details/:id',
+        templateUrl:'/app/components/quiz/quiz-details/quiz-details.html',
+        controller:'quizDetails'
+    })
+    .state('deleteQuiz', {
+        url:'/quiz/delete/:id',
+        templateUrl:'/app/components/quiz/quiz-delete/quiz-delete.html',
+        controller:'quizDelete'
+    })
+
+    .state('quizesResponses', {
+        url:'/quiz/:id/responses/',
+        templateUrl:'/app/components/quiz-response/quiz-response-list/quiz-response-list.html',
+        controller:'quizResponseList'
     })
 
     .state('bancopreguntas', {

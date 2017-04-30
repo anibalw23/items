@@ -1,0 +1,27 @@
+<h1>Respuestas del Quiz</h1>
+
+
+<table class="table table-bordered" ng-repeat="(i, response) in quizResponses track by $index">
+    <th>
+        <tr>
+            <td>Pregunta</td>
+            <td>Tipo Pregunta</td>
+            <td>Respuesta</td>
+        </tr>
+    </th>
+    <tbody>
+        <tr ng-repeat="(j, respuesta) in response.responses track by $index" >
+            <td>
+                {{respuesta.itemText}}
+            </td>
+            <td>
+                {{respuesta.itemType}}
+            </td>
+            <td>
+                {{respuesta.value.choiceValue}}
+            </td>
+        </tr>
+
+    </tbody>
+
+</table>

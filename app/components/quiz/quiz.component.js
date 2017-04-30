@@ -3,6 +3,9 @@ var QuizModule = angular.module("QuizModule",[
     'QuizCreateModule',
     'QuizListModule',
     'QuizTakeModule',
+    'QuizDetailsModule',
+    'QuizDeleteModule',
     'formly',
-    'formlyBootstrap'
+    'formlyBootstrap',
 ]);
+

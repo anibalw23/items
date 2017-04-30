@@ -8,7 +8,7 @@ var Item = require('./item');
 
 
 var QuizSchema = new Schema({
-     titulo: String,
+   titulo: String,
    descripcion:String,
    creadoPor:String,
    duracion:Number,

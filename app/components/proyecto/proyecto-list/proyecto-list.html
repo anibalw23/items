@@ -1,43 +1,26 @@
 
-<div class="container bootstrap snippet">
-  <div class="header">
-    <h3 class="text-muted prj-name">
-        <span class="fa fa-users fa-2x principal-title"></span>
-        Lista de Proyectos
-    </h3>
-  </div>
 
+<md-toolbar md-scroll-shrink>
+     <div class="md-toolbar-tools">Proyectos</div>
+</md-toolbar>
 
-  <div class="jumbotron list-content">
-    <ul class="list-group">
-       <a ui-sref="CreateProyecto" href="#/proyectos/create" class="btn btn-default">Crear Nuevo Proyecto</a>
-      <li href="#" class="list-group-item title">
-        Lista de Proyectos
-      </li>
+     <md-button class="md-primary md-raised" ui-sref="CreateProyecto" ng-href="#/proyectos/create" >Crear Proyecto</md-button>
+     <md-subheader class="md-no-sticky">Lista de Proyectos</md-subheader>
 
-      <li ng-repeat="proyecto in proyectos" href="#" class="list-group-item text-left">
-          <span style="font-size:25px;" class="img-thumbnail glyphicon glyphicon-book"  > </span>
-           Proyecto <label class="name">{{ proyecto.nombre }}</label>
+      <md-list-item ng-repeat="proyecto in proyectos" ng-click="" class="noright">
+          <p>{{ proyecto.nombre }}</p>
 
-        <label class="pull-right">
-            <a ui-sref="detailsProyecto({id: proyecto._id})" class="btn btn-success btn-xs glyphicon glyphicon-ok"  title="Ver"></a>
-            <a ui-sref="deleteProyecto({id: proyecto._id})" class="btn btn-danger  btn-xs glyphicon glyphicon-trash" href="#" title="Borrar"></a>
-            <a  ui-sref="editProyecto({id: proyecto._id})"  class="btn btn-info  btn-xs glyphicon glyphicon glyphicon-comment" href="#" title="Editar Proyecto"></a>
-        </label>
-        <div class="break"></div>
-      </li>
+           <md-button  ui-sref="detailsProyecto({id: proyecto._id})" class="md-icon-button" title="Detalles" aria-label="Ver">
+            <ng-md-icon icon="list" style="fill:gray" size="26"></ng-md-icon>
+           </md-button>
 
-      <li href="#" class="list-group-item text-left">
-        <a class="btn btn-block btn-primary">
-            <i class="glyphicon glyphicon-refresh"></i>
-            Cargar Mas...
-        </a>
-      </li>
-    </ul>
-  </div>
-  </div>
-<div>
+            <md-button  ui-sref="editProyecto({id: proyecto._id})"  class="md-icon-button" href="#" title="Editar">
+             <ng-md-icon icon="mode_edit" style="fill:orange" size="26"></ng-md-icon>
+            </md-button>
 
+            <md-button ui-sref="deleteProyecto({id: proyecto._id})" class="md-icon-button" href="#" title="Borrar">
+                <ng-md-icon icon="delete" style="fill:red" size="26"></ng-md-icon>
+            </md-button>
 
-</div>
-
+          <md-divider ng-if="!$last"></md-divider>
+      </md-list-item>

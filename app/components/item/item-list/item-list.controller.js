@@ -1,6 +1,6 @@
 myApp.controller('itemList', ItemListController);
 
-function ItemListController($scope, ItemService){
+function ItemListController($scope, $mdSidenav, ItemService){
     $scope.output_item_search = [];
     $scope.items = {};
     ItemService.getAll().then(function (response) {
@@ -13,6 +13,11 @@ function ItemListController($scope, ItemService){
         //$scope.items = newItems;
     }
 
+
+    $scope.toggleLeft = function() {
+        $mdSidenav("left")
+          .toggle();
+    };
 
 
 }

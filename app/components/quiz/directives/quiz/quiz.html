@@ -16,21 +16,18 @@
         {{quiz.titulo}}
       </div>
       <div class="panel-body">
-      <!--  <quiz-items items="quiz.items" answers="answers">
-        </quiz-items> -->
-        <formly-form model="model" fields="fields">
-        </formly-form>
-        <pre>{{model | json}}</pre>
+       <quiz-items items="quiz.items" answers="answers"></quiz-items>
+        <pre> Answers: {{answers | json}}</pre>
 
-
-
-        <button class="btn btn-success" ng-click="end()">Enviar Respuestas</button>
+        <button class="btn btn-success" ng-click="onComplete()">Enviar Respuestas</button>
       </div>
     </div>
 </div>
 
 <div class="intro" ng-show="!inProgress">
-	<p>Welcome to the QuizApp</p>
-	<button id="startQuiz" ng-click="start()">Start the Quiz</button>
+	<h1>Bienvenido al Quiz!</h1>
+     <md-button ng-click="start()"  class="md-raised md-warn md-button md-ink-ripple"  aria-label="Iniciar Quiz" title="Iniciar Quiz">  Iniciar Quiz
+    </md-button>
+
 </div>
 

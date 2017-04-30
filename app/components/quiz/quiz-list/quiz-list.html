@@ -1,8 +1,12 @@
 
 
-
+<div layout="column" flex layout-fill ng-cloak>
    <div class="row">
-       <div class="col-md-3" style="margin-top:50px;">
+
+
+
+
+      <!-- <div class="col-md-3" style="margin-top:50px;">
            <div class="panel-group">
               <div class="panel panel-default">
                   <div class="panel-heading">Busqueda de Quizes</div>
@@ -11,57 +15,48 @@
                 </div>
               </div>
             </div>
-       </div>
+       </div> -->
 
 
         <div class="col-md-8">
-            <div class="header">
-                <h3 class="text-muted prj-name">
-                    <span class="fa fa-users fa-2x principal-title"></span>
-                    Lista de Items
-                </h3>
-           </div>
-             <div class="jumbotron list-content">
-                <ul class="list-group">
-                    <div class="form-group">
-                        <a ui-sref="CreateQuiz" href="#/quizes/create" class="btn btn-default">Crear Nuevo Quiz</a>
-                    </div>
+            <md-toolbar md-scroll-shrink>
+                <div class="md-toolbar-tools">Quizes</div>
+              </md-toolbar>
 
+             <md-button class="md-primary md-raised" ui-sref="CreateQuiz" ng-href="#/quizes/create" >Crear Quiz</md-button>
 
-                  <li href="#" class="list-group-item title">
-                    Lista de Quizes
-                  </li>
+                <md-subheader class="md-no-sticky">Lista de Pruebas</md-subheader>
+                <md-list-item ng-repeat="quiz in quizes" ng-click="" class="noright">
+                    <p>{{ quiz.titulo }}</p>
 
-                  <li ng-repeat="quiz in quizes" href="#" class="list-group-item text-left">
-                      <label class="name">{{ quiz.titulo }}</label>
+                       <md-button ui-sref="detailsQuiz({id: quiz._id})" class="md-icon-button"  aria-label="Ver" title="Detalles">
+                            <ng-md-icon icon="list" style="fill:gray" size="26"></ng-md-icon>
+                        </md-button>
 
-                    <label class="pull-right">
-                        <a ui-sref="detailsQuiz({id: quiz._id})" class="btn btn-success btn-xs glyphicon glyphicon-ok"  title="Ver"></a>
-                        <a ui-sref="deleteQuiz({id: quiz._id})" class="btn btn-danger  btn-xs glyphicon glyphicon-trash" href="#" title="Borrar"></a>
-                        <a  ui-sref="editQuiz({id: quiz._id})"  class="btn btn-info  btn-xs glyphicon glyphicon glyphicon-comment" href="#" title="Editar"></a>
-                        <a  ui-sref="takeQuiz({id: quiz._id})"  class="btn btn-warning  btn-xs glyphicon glyphicon glyphicon-pencil" href="#" title="Tomar Quiz"></a>
+                        <md-button  ui-sref="editQuiz({id: quiz._id})"  class="md-icon-button" href="#" title="Editar">
+                             <ng-md-icon icon="mode_edit" style="fill:orange" size="26"></ng-md-icon>
+                        </md-button>
 
+                         <md-button ui-sref="deleteQuiz({id: quiz._id})" class="md-icon-button" href="#" title="Borrar">
+                            <ng-md-icon icon="delete" style="fill:red" size="26"></ng-md-icon>
+                        </md-button>
 
-                    </label>
-                    <div class="break"></div>
-                  </li>
+                        <md-button  ui-sref="takeQuiz({id: quiz._id})"  class="md-icon-button" href="#" title="Tomar Quiz">
+                            <ng-md-icon icon="fast_forward" style="fill:green" size="26"></ng-md-icon>
+                        </md-button>
+                        <md-button  ui-sref="quizesResponses({id: quiz._id})"  class="md-icon-button" href="#" title="Ver Respuestas">
+                             <ng-md-icon icon="playlist_add_check" style="fill:gray" size="26"></ng-md-icon>
+                        </md-button>
+                    <md-divider ng-if="!$last"></md-divider>
 
-                  <li href="#" class="list-group-item text-left">
-                    <a class="btn btn-block btn-primary">
-                        <i class="glyphicon glyphicon-refresh"></i>
-                        Cargar Mas...
-                    </a>
-                  </li>
-                </ul>
-              </div>
-
+              </md-list-item>
 
            </div>
 
     </div>
 
 
-<div>
+
 
 
 </div>

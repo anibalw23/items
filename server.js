@@ -66,34 +66,10 @@ app.get('/api/quiz/:id',  quizController.find_quiz);
 app.delete('/api/quiz/:id',  quizController.delete_quiz);
 app.put('/api/quiz/',  quizController.edit_quiz);
 
-
-
-
-
-/*var mongoose = require('mongoose');
-var Clasificador = require('./models/clasificador').Clasificador;
-cat = new Clasificador({label: "Familia 1"});
-cat.save(function(err, foods){
-    // append new sub category
-    foods.appendChild({label: "Familia 1.1"}, function(err, vega){
-        // vega: { name: "Vegetables", parentId: [foods ID], path: ',[foods ID]' }
-    });
-    foods.appendChild({label: "Familia 1.2"}, function(err, vega){
-        // vega: { name: "Vegetables", parentId: [foods ID], path: ',[foods ID]' }
-    });
-    // or make new
-    //var vega = new Clasificador({label: "Vegetables"});
-    // saving with append
-    //foods.appendChild(vega, function(err, data){  });
-    // or save traditional way
-    //vega.parentId = foods._id;
-    //vega.save(function(err, data){ });
-});*/
-
-
-
-
-
+var quizResponseController = require('./controllers/quiz_response');
+//app.get('/api/quizresponses',  quizResponseController.list_all_responses);
+app.post('/api/quizresponses',  quizResponseController.save_quiz_responses);
+app.post('/api/quizresponsesByQuizId',  quizResponseController.findByQuizId);
 
 // Carga una vista HTML simple donde irá nuestra Single App Page
 // Angular Manejará el Frontend

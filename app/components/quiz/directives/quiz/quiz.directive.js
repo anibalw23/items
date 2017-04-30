@@ -1,9 +1,12 @@
+
 QuizModule.directive("quiz", function() {
     return {
         scope: {
             quizId:"=quizId",
+            userId :"=userId",
             score:"=score",
             answers:"=answers",
+            onComplete:"&onComplete", //funcion que se ejecuta cuando se completa el quiz
             shuffleQuestions: "=shuffleQuestions",
             showPager: "=showPager",
             allowBack: "=allowBack",
@@ -12,67 +15,27 @@ QuizModule.directive("quiz", function() {
         templateUrl: '/app/components/quiz/directives/quiz/quiz.html',
         controller: function($scope, QuizService){
             $scope.quiz = {};
-            var vm = this;
-            $scope.model = {
-              awesome: true
-            };
+            $scope.formModel = {};
             $scope.fields = [];
-            /*$scope.fields.push(
-                {
-                  key: 'text',
-                  type: 'input',
-                  templateOptions: {
-                      label: 'Text',
-                      placeholder: 'Formly is terrific!'
-                  }
-                }
-            );*/
-
-            /*$scope.fields = [
-                {
-                  key: 'text',
-                  type: 'input',
-                  templateOptions: {
-                      label: 'Text',
-                      placeholder: 'Formly is terrific!'
-                  }
-                }
-
-            ];*/
-
-
-
-
+            $scope.options = {};
+            $scope.answers = {
+              quizId: $scope.quizId,
+              userId:$scope.userId,
+              responses: [],
+            };
 
 
 
             /*Get the Quiz*/
             $scope.getQuiz = function(quizId){
-                console.log("getQuiz()" + quizId );
                 QuizService.find(quizId).then(function (response) {
                     $scope.quiz = response;
-                    angular.forEach($scope.quiz.items, function(item, key){
-                        if(item.tipo_pregunta == "seleccion_multiple"){
-                           $scope.fields.push(
-                                {
-                                  key: 'answers' + key,
-                                  type: 'multiCheckbox',
-                                  templateOptions: {
-                                      label: item.titulo,
-                                      options:item.choices,
-                                      valueProp: '_id',
-                                      labelProp: 'titulo'
-                                  }
-                                }
-                            );
-
-                        }
-
-                    });
-
                     return $scope.quiz;
                 }.bind(this));
+
+
             }
+
             /*Start the Quiz*/
             $scope.start = function() {
                 console.log("Start Quiz!");
@@ -88,7 +51,9 @@ QuizModule.directive("quiz", function() {
                 $scope.quizOver = true;
                 $scope.inProgress = false;
 			};
-
+            function getRandomInt(min, max) {
+              return Math.floor(Math.random() * (max - min)) + min;
+            }
 
         },
 
@@ -98,4 +63,11 @@ QuizModule.directive("quiz", function() {
 
 
     };
+});
+
+
+
+
+QuizModule.config(function config(formlyConfigProvider) {
+
 });

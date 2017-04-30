@@ -1,14 +1,15 @@
 <link rel="stylesheet" href="app/components/quiz/directives/quiz-items/quiz-items.css">
 <div>
 
-       <div ng-repeat="item in items">
-          <h5> <strong>{{ item.titulo }}</strong> </h5>
+       <div ng-repeat="(i, item) in items  track by $index">
+           <md-subheader>{{ item.titulo }}</md-subheader>
            <div ng-switch="item.tipo_pregunta">
                <div ng-switch-when="seleccion_multiple">
-                    <item-seleccion-multiple text="item.titulo" choices="item.choices" choice-type="item.tipo_pregunta" answers="answers">
+                    <item-seleccion-multiple item="item" choices="item.choices" index="$index" answers="answers">
                     </item-seleccion-multiple>
               </div>
            </div>
+            <md-divider ng-if="!$last"></md-divider>
         </div>
 
 </div>
